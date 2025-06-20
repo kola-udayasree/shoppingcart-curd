@@ -31,7 +31,6 @@ public class ProductController {
 	 */
 	@GetMapping("/products")
 	public List<Product> getProducts() {
-
 		logger.debug("---Getting all products---");
 		List<Product> productList = this.productRepository.findAll();
 		logger.debug("Product List: "+productList);
