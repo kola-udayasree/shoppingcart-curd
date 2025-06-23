@@ -43,7 +43,6 @@ public class OrdersController {
 	@GetMapping("/myorders/{emailId}")
 	public ResponseEntity<List<Order>> getOrderByEmailId(@PathVariable String emailId)
 			throws ResourceNotFoundException {
-
 		logger.debug(" --- Getting all orders for given user with details---");
 		List<Order> orders = this.orderRepository.findByEmailId(emailId);
 		if (null != orders && !orders.isEmpty()) {
