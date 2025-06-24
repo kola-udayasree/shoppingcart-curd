@@ -62,8 +62,7 @@ public class OrdersController {
 	@GetMapping("/orders/{id}")
 	public ResponseEntity<Order> getOrderById(@PathVariable(value = "id") Long orderId)
 			throws ResourceNotFoundException {
-
-		logger.debug(" --- Getting Order details based on given OrderId --- ");
+		logger.debug(" --- Getting Order Details based on given OrderId --- ");
 		Order order = this.orderRepository.findById(orderId)
 				.orElseThrow(() -> new ResourceNotFoundException(" Order not found for :: " + orderId));
 		return new ResponseEntity<Order>(order, HttpStatus.OK);
