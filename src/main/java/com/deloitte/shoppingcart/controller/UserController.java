@@ -40,6 +40,7 @@ public class UserController {
 	 */
 	@GetMapping("/login/{emailId}")
 	public ResponseEntity<User> getUserByEmailId(@PathVariable String emailId) throws ResourceNotFoundException {
+
 		logger.debug(" --- login user into online shopping --- "+emailId);
 		User user = userRepository.findByEmailId(emailId);
 		if (user != null) {
